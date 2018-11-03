@@ -1,5 +1,5 @@
 <?php
-	include("database.php");
+	require("database.php");
 	//获取表内的符合条件的所有数据,实现查询;
 	function get($table,$label = "",$value=""){
 		$statement = "";
