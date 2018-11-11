@@ -1,11 +1,12 @@
 <?php 
-	header("Content-Type: text/json;charset=utf-8");
-	// echo(json_encode($_POST["name"]));
-	// exit();
-	include('../common/database.php');
+	header('Access-Control-Allow-Origin:*');
+	header("content-type:application/json;charset=utf-8");  
+	require('../common/database.php');
 	$data = [];
 	$user = trim($_POST['username']);
 	$password = trim($_POST['password']);
+	echo json_encode($user);
+	exit();
 	$sql_user = "SELECT * FROM admin WHERE name = '$user'";
 	if( mysql_num_rows(mysql_query($sql_user)) == 0){
 		array_push($data, [
